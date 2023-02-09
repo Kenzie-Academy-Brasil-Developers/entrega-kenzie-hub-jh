@@ -86,7 +86,7 @@ export const StyleCadastro = styled.main`
             border: none;
         }
 
-        button , a{
+        button , a , select {
             padding: 13px ;
             text-align: center;
             border-radius: var(--radius-1);
@@ -110,6 +110,13 @@ export const StyleCadastro = styled.main`
             font-size: var(--font-title);
         }
 
+       .imputError{
+        color: red;
+       }
+       option{
+        border-bottom: 1px solid;
+        
+       }
     }
 
 

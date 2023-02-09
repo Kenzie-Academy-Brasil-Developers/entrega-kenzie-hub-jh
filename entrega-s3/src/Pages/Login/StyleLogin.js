@@ -85,6 +85,10 @@ export const StyleLogin = styled.main`
             font-size: var(--font-title);
         }
 
+        .imputError{
+            color: red;
+        }
+
     }
 
 

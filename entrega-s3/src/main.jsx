@@ -11,12 +11,12 @@ import {ResetStyles} from './Styles/ResetStyle'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
 
-   <ResetStyles />
-   <GlobalStyle />
+    <ResetStyles />
+    <GlobalStyle />
 
     <BrowserRouter >
       <App />
     </BrowserRouter >
 
-  </React.StrictMode>,
+  </React.StrictMode>
 )
