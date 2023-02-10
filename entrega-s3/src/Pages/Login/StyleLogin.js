@@ -1,8 +1,8 @@
 import styled from "styled-components"
 
 export const StyleLogin = styled.main`
-    
-    margin-top: 100px;
+    max-width: 95%;
+    margin-top: 50px;
     height: 100%;
 
     @media (max-width: 600px) {
@@ -22,13 +22,13 @@ export const StyleLogin = styled.main`
         justify-content: space-between;
         flex-direction: column;
 
-        gap: 25px;
+        gap: 20px;
 
         width: 95%;
         max-width: 369px;
 
         height: 100%;
-        max-height: 502px;
+        
         margin: 0 auto;
         border-radius: var(--radius-1);
 

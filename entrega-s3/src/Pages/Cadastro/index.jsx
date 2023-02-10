@@ -4,8 +4,12 @@ import * as yup from "yup"
 import { Link } from "react-router-dom"
 import {StyleCadastro} from "./StyleCadastro"
 import { api } from "../../API/index.js"
+import { toast } from "react-toastify"
+import { useNavigate } from "react-router-dom"
 
 export const Cadastro = () => {
+
+    const navigate = useNavigate()
 
     const formShecma = yup.object().shape({
 
@@ -41,17 +45,18 @@ export const Cadastro = () => {
 
     const cadastro = async ({senhaComfirm, ...Data}) => {
 
-       
-
        try{
-         console.log(senhaComfirm)
-         console.log(Data)
-         console.log(await api.post("/users" , Data))
+   
+        await api.post("/users" , Data)
+
+        toast.success("Cadastrado com sucesso")
+        navigate("/")
 
        }catch (error) {
 
-        console.error(error.response.data.message[0])
-
+            console.log(error)
+            toast.error(error.message , {autoClose: 2000})
+       
        }
        
     }

@@ -6,6 +6,7 @@ import {StyleLogin} from "./StyleLogin"
 import { useEffect } from "react"
 import { api } from "../../API"
 import { useNavigate } from "react-router-dom"
+import { toast } from "react-toastify"
 
 export const Login = () => {
 
@@ -14,13 +15,8 @@ export const Login = () => {
     const formShecma = yup.object().shape({
 
         email: yup.string().required("Digite seu e-mail").email("Digite um E-mail válido"),
-        password: yup.string()
-        .matches(/[a-z]/ , "Deve conter uma letra minuscula")
-        .matches(/\d/ , "Deve conter ao menos 1 numero" )
-        .matches(/[A-Z]/ , "Deve conter ao menos uma letra maiuscula")
-        .matches(/\W|_/ , "Deve conter no minimo caracter especial")
-        .matches(/.{8,}/ , "Deve conter no minimo 8 caracters")
-        .required("Digite sua senha")
+
+        password: yup.string().required("Digite sua senha")
 
     })
 
@@ -37,13 +33,16 @@ export const Login = () => {
            const userDados =  await api.post("/sessions" , data)
            console.log(userDados)
            localStorage.setItem("@userLogin" , JSON.stringify(userDados.data))
+           
+           toast.success("Login realizado com sucesso." , {autoClose: 2000} )
            navigate("/DashBoard")
 
         }catch (error) {
 
             console.error(error.message)
-        }
+            toast.error("Email ou senha Inválidos" , {autoClose: 2000})
 
+        }
     }
     
     return(
@@ -61,7 +60,7 @@ export const Login = () => {
 
                 <label htmlFor="Senha">Senha</label>
                 <input {...register("password")} placeholder="Digite sua senha" id="Senha" type="password" />
-                <span className="imputError">{errors.senha?.message}</span>
+                <span className="imputError">{errors.password?.message}</span>
 
                 <button>Entrar</button>
 

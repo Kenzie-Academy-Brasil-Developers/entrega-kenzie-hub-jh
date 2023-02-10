@@ -1,5 +1,6 @@
-import { useState } from 'react'
 import { Route , Routes } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import {Login} from "./Pages/Login"
 import {Cadastro} from "./Pages/Cadastro"
@@ -16,7 +17,7 @@ function App() {
         <Route path='/Cadastro' element={<Cadastro />} />
         <Route path='/DashBoard' element={<DashBoard />} />
       </Routes>
-
+      <ToastContainer />
     </div>
   )
 }
