@@ -1,9 +1,13 @@
 import styled from "styled-components"
 
 export const StyleLogin = styled.main`
-
+    
     margin-top: 100px;
     height: 100%;
+
+    @media (max-width: 600px) {
+        margin-top: 50px;
+    }
 
     h1{
         text-align: center;
@@ -20,7 +24,7 @@ export const StyleLogin = styled.main`
 
         gap: 25px;
 
-        width: 100vw;
+        width: 95%;
         max-width: 369px;
 
         height: 100%;

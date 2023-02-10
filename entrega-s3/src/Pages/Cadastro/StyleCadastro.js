@@ -5,15 +5,16 @@ export const StyleCadastro = styled.main`
     display: flex;
     flex-direction: column;
     margin-top: 10px;
-    gap: 20px;
+    gap: 15px;
 
+   
 
     > div{
         display: flex;
         align-items: center;
         justify-content: space-between;
         box-sizing: content-box;
-        width: 100%;
+        width: 95%;
         max-width: 369px;
         margin: 0 auto;
         margin-top: 50px;
@@ -27,11 +28,16 @@ export const StyleCadastro = styled.main`
 
         a{
             color: white;
-            padding: 10px;
+            padding: 10px 20px;
             background-color: var(--color-grey-2);
             border-radius: var(--radius-1);
             font-size: var(--font-title);
             box-sizing: content-box;
+            opacity: 80%;
+        }
+
+        a:hover{
+          opacity: 100%;
         }
 
     }
@@ -43,9 +49,9 @@ export const StyleCadastro = styled.main`
         justify-content: space-between;
         flex-direction: column;
 
-        gap: 20px;
+        gap: 15px;
 
-        width: 100vw;
+        width: 95vw;
         max-width: 369px;
 
         height: 100%;
@@ -54,7 +60,7 @@ export const StyleCadastro = styled.main`
         border-radius: var(--radius-1);
 
         box-sizing: border-box;
-        padding: 25px;
+        padding: 20px 30px;
 
         background-color: var(--color-grey-2);
 
@@ -108,6 +114,7 @@ export const StyleCadastro = styled.main`
             background-color: var(--color-grey-4);
             color: var(--color-grey-5) ;
             font-size: var(--font-title);
+            opacity: 80%;
         }
 
        .imputError{
@@ -118,6 +125,8 @@ export const StyleCadastro = styled.main`
         
        }
     }
+
+  
 
 
 `

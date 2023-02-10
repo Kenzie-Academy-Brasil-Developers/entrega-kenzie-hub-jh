@@ -1,16 +1,26 @@
+import { useEffect } from "react"
 import {UserImformations} from "./UserImformationStyled"
 
-export const UserImformation = () => {
+export const UserImformation = ({user}) => {
 
-    return(
 
-        <UserImformations>
-            <div>
-                <h1>Olá , joilson Hungria</h1>
-                <span>Primeiro Módulo (Introdução ao Frontend)</span>
-            </div>
-        </UserImformations>
+    if(user){
 
-    )
+        return(
+
+            <UserImformations>
+                <div>
+                    <h1>Olá , {user.user.name}</h1>
+                    <span>{user.user.course_module}</span>
+                </div>
+            </UserImformations>
+
+        )
+
+    }else{
+
+        return <></>
+        
+    }
 
 }

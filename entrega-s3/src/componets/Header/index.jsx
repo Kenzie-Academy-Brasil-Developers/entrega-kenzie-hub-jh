@@ -5,7 +5,7 @@ export const Header = ({setUser}) => {
     const logout = ( ) => {
 
         localStorage.clear()
-        setUser(null)
+        setUser(false)
 
     }
 

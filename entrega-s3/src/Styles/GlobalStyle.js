@@ -12,6 +12,7 @@ body{
   width: 100vw;
 
   box-sizing: border-box;
+  
 
   display: flex;
   flex-direction: column;

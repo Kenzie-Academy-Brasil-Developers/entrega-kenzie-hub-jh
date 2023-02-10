@@ -30,8 +30,6 @@ export const Login = () => {
 
     } )
 
-  
-
     const onSubmitLogin = async (data) => {
 
         try{
@@ -44,10 +42,7 @@ export const Login = () => {
         }catch (error) {
 
             console.error(error.message)
-
-
         }
-
 
     }
     
@@ -65,7 +60,7 @@ export const Login = () => {
                 <span className="imputError">{errors.email?.message}</span>
 
                 <label htmlFor="Senha">Senha</label>
-                <input {...register("password")} placeholder="Digite sua senha" id="Senha" type="text" />
+                <input {...register("password")} placeholder="Digite sua senha" id="Senha" type="password" />
                 <span className="imputError">{errors.senha?.message}</span>
 
                 <button>Entrar</button>

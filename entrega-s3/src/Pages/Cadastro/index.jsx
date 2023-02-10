@@ -2,11 +2,7 @@ import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup" 
 import { Link } from "react-router-dom"
-
-
 import {StyleCadastro} from "./StyleCadastro"
-
-import { useEffect } from "react"
 import { api } from "../../API/index.js"
 
 export const Cadastro = () => {
@@ -17,24 +13,23 @@ export const Cadastro = () => {
 
         email: yup.string().required("Preencha este campo")
             .email("Digite um email válido"),
-
         password: yup.string()
+            .required("Preencha este campo")
             .matches(/[a-z]/ , "Deve conter uma letra minuscula")
             .matches(/\d/ , "Deve conter ao menos 1 numero" )
             .matches(/[A-Z]/ , "Deve conter ao menos uma letra maiuscula")
             .matches(/\W|_/ , "Deve conter no minimo caracter especial")
-            .matches(/.{8,}/ , "Deve conter no minimo 8 caracters")
-            .required("Digite sua senha"),
-
+            .matches(/.{8,}/ , "Deve conter no minimo 8 caracters"),
+            
         senhaComfirm: yup.string()
-            .oneOf([yup.ref("senha")] ,  "Comfirmar senha deve ser igual senha")
-            .required("Preencha este campo"),
+            .required("Preencha este campo")
+            .oneOf([yup.ref("password")] ,"Comfirmar senha deve ser igual senha"),
 
         bio: yup.string().required("Preencha este campo"),
 
         contact: yup.string().required("Preencha este campo"),
 
-        modulo: yup.string().required("Selecione um modulo"),
+        course_module: yup.string().required("Selecione um modulo"),
 
     })
 
@@ -44,15 +39,18 @@ export const Cadastro = () => {
 
     } )
 
-    const cadastro = async (Data) => {
+    const cadastro = async ({senhaComfirm, ...Data}) => {
+
+       
 
        try{
-
-       console.log (await api.get("/users"))
+         console.log(senhaComfirm)
+         console.log(Data)
+         console.log(await api.post("/users" , Data))
 
        }catch (error) {
 
-        console.error(error.message)
+        console.error(error.response.data.message[0])
 
        }
        
@@ -74,7 +72,7 @@ export const Cadastro = () => {
 
                 <label  htmlFor="Nome">Nome</label>
                 <input {...register("name")} placeholder="Digite seu Nome" id="Nome" type="text" />
-                <span className="imputError">{errors.nome?.message}</span>
+                <span className="imputError">{errors.name?.message}</span>
 
                 <label htmlFor="Email">Email</label>
                 <input {...register("email")} placeholder="Digite sua Email" id="Email" type="text" />
@@ -82,7 +80,7 @@ export const Cadastro = () => {
 
                 <label htmlFor="Senha">Senha</label>
                 <input {...register("password")} placeholder="Digite sua Senha" id="Senha" type="password" />
-                <span className="imputError"> {errors.senha?.message} </span>
+                <span className="imputError"> {errors.password?.message} </span>
 
                 <label htmlFor="Senha">Confirmar Senha</label>
                 <input {...register("senhaComfirm")} placeholder="Digite novamente sua Senha" id="Senha" type="password" />
@@ -94,7 +92,7 @@ export const Cadastro = () => {
 
                 <label htmlFor="Contato">Contato</label>
                 <input {...register("contact")} placeholder="Opção de contato" id="Contato" type="text" />
-                <span className="imputError">  {errors.contato?.message} </span>
+                <span className="imputError">  {errors.contact?.message} </span>
 
                 <label htmlFor="Modulo">Módulo</label>
                 <select {...register("course_module")} placeholder="Selecionar módulo" id="Modulo" type="text"> 
@@ -102,8 +100,9 @@ export const Cadastro = () => {
                     <option value="Primeiro módulo (Introdução ao Frontend)">Primeiro módulo (Introdução ao Frontend)</option>
                     <option value="Segundo módulo (Frontend Avançado)">Segundo módulo (Frontend Avançado)</option>
                     <option value="Terceiro módulo (Introdução ao Backend)">Terceiro módulo (Introdução ao Backend)</option>
+                    <option value="Quarto módulo (Backend Avançado)">Quarto módulo (Backend Avançado)</option>
                 </select>
-                <span className="imputError">  {errors.modulo?.message} </span>
+                <span className="imputError">  {errors.course_module?.message} </span>
 
                 <button type="submit">Cadastrar</button>
 

@@ -9,9 +9,11 @@ export const UserImformations = styled.section`
     div{
         display: flex;
         justify-content: space-between;
+        align-items: center;
         max-width: 1200px;
         margin: 0 auto;
         padding: 40px 30px;
+
 
         h1{
             font-size: 1.5rem;
@@ -19,8 +21,15 @@ export const UserImformations = styled.section`
         }
 
         span{
-            color: var(--color-grey-3);
+            color: var(--color-grey-4);
             font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            
+            flex-direction: column;
+            gap: 10px;
+
         }
     }
 
