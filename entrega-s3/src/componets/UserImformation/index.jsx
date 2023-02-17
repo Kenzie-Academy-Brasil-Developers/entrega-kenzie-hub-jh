@@ -1,8 +1,7 @@
-import { useEffect } from "react"
+
 import {UserImformations} from "./UserImformationStyled"
 
 export const UserImformation = ({user}) => {
-
 
     if(user){
 
@@ -10,8 +9,8 @@ export const UserImformation = ({user}) => {
 
             <UserImformations>
                 <div>
-                    <h1>Olá , {user.user.name}</h1>
-                    <span>{user.user.course_module}</span>
+                    <h1>Olá , {user.name}</h1>
+                    <span>{user.course_module}</span>
                 </div>
             </UserImformations>
 
@@ -19,7 +18,7 @@ export const UserImformation = ({user}) => {
 
     }else{
 
-        return <></>
+        return <> </>
         
     }
 

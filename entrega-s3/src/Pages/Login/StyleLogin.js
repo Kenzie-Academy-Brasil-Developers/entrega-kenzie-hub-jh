@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 export const StyleLogin = styled.main`
     max-width: 95%;
+    margin: 0 auto;
     margin-top: 50px;
     height: 100%;
 
@@ -38,7 +39,7 @@ export const StyleLogin = styled.main`
         background-color: var(--color-grey-2);
 
         h2{
-            font-size: var(--font-title);
+            font-size: 1.5em;
             align-self: center;
             color: var(--color-grey-5);
         }

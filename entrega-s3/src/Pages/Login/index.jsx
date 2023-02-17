@@ -12,6 +12,14 @@ export const Login = () => {
 
     const navigate = useNavigate()
 
+    if(localStorage.getItem("@token")){
+        
+        useEffect(()=>{
+            navigate("/DashBoard")
+        })
+        
+    }
+
     const formShecma = yup.object().shape({
 
         email: yup.string().required("Digite seu e-mail").email("Digite um E-mail válido"),
@@ -31,8 +39,10 @@ export const Login = () => {
         try{
    
            const userDados =  await api.post("/sessions" , data)
-           console.log(userDados)
-           localStorage.setItem("@userLogin" , JSON.stringify(userDados.data))
+           
+           localStorage.setItem("@token" , userDados.data.token)
+           localStorage.setItem("@user" , JSON.stringify(userDados.data.user))
+           localStorage.setItem("@techs" , JSON.stringify(userDados.data.user.techs))
            
            toast.success("Login realizado com sucesso." , {autoClose: 2000} )
            navigate("/DashBoard")

@@ -65,7 +65,7 @@ export const StyleCadastro = styled.main`
         background-color: var(--color-grey-2);
 
         h2{
-            font-size: var(--font-title);
+            font-size: 1.5em;
             align-self: center;
             color: var(--color-grey-5);
         }

@@ -54,8 +54,8 @@ export const Cadastro = () => {
 
        }catch (error) {
 
-            console.log(error)
-            toast.error(error.message , {autoClose: 2000})
+        console.log(error)
+        toast.error(error.message , {autoClose: 2000})
        
        }
        
@@ -92,7 +92,7 @@ export const Cadastro = () => {
                 <span className="imputError"> {errors.senhaComfirm?.message} </span>
                 
                 <label htmlFor="Bio">Bio</label>
-                <input {...register("bio")} placeholder="Fale sibre você" id="Bio" type="text" />
+                <input {...register("bio")} placeholder="Fale sobre você" id="Bio" type="text" />
                 <span className="imputError">  {errors.bio?.message} </span>
 
                 <label htmlFor="Contato">Contato</label>

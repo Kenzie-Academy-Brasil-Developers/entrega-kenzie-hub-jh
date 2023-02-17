@@ -8,8 +8,9 @@ export const GlobalStyle = createGlobalStyle`
 body{
   font-family: 'Poppins', sans-serif;
   background-color:  #121214;
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  width:100%;
+  
 
   box-sizing: border-box;
   
