@@ -18,7 +18,7 @@ export const ModalCadastroTech = () => {
 
     const { renderModalCreation } = useContext(ModalAddTechContext)
 
-     const { setAtualizaTec , tachUser } = useContext(RenderTechsContexto)
+     const { setAtualizaTec } = useContext(RenderTechsContexto)
 
     const token = localStorage.getItem("@token")
 
@@ -36,15 +36,15 @@ export const ModalCadastroTech = () => {
 
     })
 
-    const SendsDate = async (data) => {
+    const enviarDataTech = async (data) => {
 
         try{
 
-          const newTech = await api.post("/users/techs", data , {
+          await api.post("/users/techs", data , {
             
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
 
                 })
 
@@ -66,11 +66,11 @@ export const ModalCadastroTech = () => {
         <StyledModalCadastro>
             <div>
                 <div>
-                    <h3>Cadastrar Tecnologia</h3>
-                    <button onClick={renderModalCreation}>x</button>
+                    <h3>Cadastrar Tecnologia</h3>       
+                    <Button type="button" text="X" funcion={renderModalCreation}/>
                 </div>
 
-                <form action="" onSubmit={ handleSubmit(SendsDate)}>
+                <form action="" onSubmit={ handleSubmit(enviarDataTech)}>
                     <label htmlFor="name">Nome</label>
                     <input id="name" placeholder="tecnologia" type="text" {...register("title")}/>
                     <span>{errors.title && errors.title.message}</span>
@@ -82,7 +82,6 @@ export const ModalCadastroTech = () => {
                         <option value="Avançado">Avançado</option>
                     </select>
                     <span>{errors.name && errors.name.message}</span>
-                    {/* <button type="subimit">Cadastrar Tecnologia</button> */}
                     <Button type={"submit"} text="Cadastrar Tecnologia" />
                 </form>
             </div>

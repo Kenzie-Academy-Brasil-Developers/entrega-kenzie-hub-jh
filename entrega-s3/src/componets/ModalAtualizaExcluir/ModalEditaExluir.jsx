@@ -56,7 +56,7 @@ export const ModalAtualizaExcluir = () => {
 
         try{
 
-            api.delete(`/users/techs/${RenderModalAtualizaExcluir.id}` ,{
+            await api.delete(`/users/techs/${RenderModalAtualizaExcluir.id}` ,{
                 headers: {
                     Authorization: `Bearer ${token}`
                 }  
@@ -87,7 +87,7 @@ export const ModalAtualizaExcluir = () => {
                 <form onSubmit={handleSubmit(atualizaTach)}>
                     <label htmlFor="name">Nome do projeto</label>
                     <input id="name" placeholder={RenderModalAtualizaExcluir.title} type="text" {...register("title")}/>
-                    <span>{errors.title && errors.title.message}</span>
+                    <span className="error">{errors.title && errors.title.message}</span>
 
                     <label htmlFor="status">status</label>
                     <select name="status" id="status" {...register("status")}>

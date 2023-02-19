@@ -84,7 +84,9 @@ export const StyledModalCadastro = styled.section`
         }
     }
 
-    
+    span{
+        color: red;
+    }
     
 
 `

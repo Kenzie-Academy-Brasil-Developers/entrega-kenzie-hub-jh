@@ -29,7 +29,7 @@ export const StyledMainDash = styled.main`
   
   >div{
     box-sizing: border-box;
-    
+    align-items: center;
     display: flex;
     justify-content: space-between;
 

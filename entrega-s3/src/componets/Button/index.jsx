@@ -1,13 +1,4 @@
-
-
 export const Button = ({text , type , funcion}) => {
-
-    
-
-
-
-
-    
 
     return (
 

@@ -1,7 +1,9 @@
 import  styled  from "styled-components";
 
 export const ModalAtualizaExcluirStyled = styled.div`
-     
+
+           
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,6 +46,9 @@ export const ModalAtualizaExcluirStyled = styled.div`
             flex-direction: column;
             gap: 15px;
 
+            
+           
+
             input ,select {
                 border: none;
                 border-radius: 3px;
@@ -83,6 +88,8 @@ export const ModalAtualizaExcluirStyled = styled.div`
 
             }
 
+          
+
             @media ( max-width: 400px ) {
        
                 button{
@@ -95,5 +102,8 @@ export const ModalAtualizaExcluirStyled = styled.div`
     }
 
   
+    span{
+              color: red;
+    }
 
 `

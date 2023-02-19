@@ -3,6 +3,7 @@ import { useState , useEffect , useContext} from "react"
 import { ModalAddTechContext } from "/src/Contexts/ModalAddTech/ModalAddTech.jsx"
 import { RenderTechsContexto } from "../../Contexts/RenderTechsContexto/RenderTechsContextos"
 import { ListTach } from "../ListTachs"
+import { Button } from "../Button"
  
  
 
@@ -23,7 +24,7 @@ export const MainDash = () => {
 
          <div>
             <h3>Tecnologias</h3>
-            <button onClick={renderModalCreation}>+</button>
+            <Button funcion={renderModalCreation} text="+" />
          </div>
 
          <ul>
