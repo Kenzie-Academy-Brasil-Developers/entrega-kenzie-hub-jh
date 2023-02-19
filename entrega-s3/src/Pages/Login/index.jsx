@@ -44,7 +44,7 @@ export const Login = () => {
            localStorage.setItem("@user" , JSON.stringify(userDados.data.user))
            localStorage.setItem("@techs" , JSON.stringify(userDados.data.user.techs))
            
-           toast.success("Login realizado com sucesso." , {autoClose: 2000} )
+           toast.success("Login realizado com sucesso." , {autoClose: 2000 , theme:"dark" })
            navigate("/DashBoard")
 
         }catch (error) {

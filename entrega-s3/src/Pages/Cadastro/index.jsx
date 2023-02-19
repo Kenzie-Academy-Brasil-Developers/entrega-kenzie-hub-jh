@@ -49,13 +49,13 @@ export const Cadastro = () => {
    
         await api.post("/users" , Data)
 
-        toast.success("Cadastrado com sucesso")
+        toast.success("Cadastrado com sucesso" , {autoClose: 2000 , theme:"dark" } )
         navigate("/")
 
        }catch (error) {
 
         console.log(error)
-        toast.error(error.message , {autoClose: 2000})
+        toast.error(error.message , {autoClose: 2000 , theme:"dark" } )
        
        }
        

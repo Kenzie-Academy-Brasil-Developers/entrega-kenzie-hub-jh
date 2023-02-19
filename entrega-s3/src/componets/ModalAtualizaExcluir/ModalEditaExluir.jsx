@@ -7,6 +7,8 @@ import { useContext } from "react"
 import { api } from "../../API"
 import { RenderTechsContexto } from "../../Contexts/RenderTechsContexto/RenderTechsContextos"
 import { toast } from "react-toastify"
+import { Button } from "../Button/index.jsx"
+
 
 export const ModalAtualizaExcluir = () => {
 
@@ -48,8 +50,6 @@ export const ModalAtualizaExcluir = () => {
 
         }
 
-       
-     
     }
 
     const deletaTech = async () => {
@@ -63,10 +63,12 @@ export const ModalAtualizaExcluir = () => {
             })
             setAtualizaTec(true)
             functionDeRenderizarModal(false)
-            toast.success("Exluido com sucesso" , {autoClose: 2000} )   
+            toast.success("Exluido com sucesso" , {autoClose: 2000 , theme:"dark" } )   
         }catch(error){
 
             console.log(error)
+            toast.success("Exluido com sucesso" , {autoClose: 2000 , theme:"dark" } )
+            
         }
 
       
@@ -95,8 +97,8 @@ export const ModalAtualizaExcluir = () => {
                     </select>
                     <span>{errors.name && errors.name.message}</span>
                     <div>
-                        <button type="subimit">Salvar alterações</button>
-                        <button type="button" onClick={deletaTech}>Excluir</button>
+                        <Button type="subimit"  text="Salvar alterações"/>
+                        <Button type={"button"} text="Excluir"  funcion={deletaTech} />
                     </div>
                     
                 </form>

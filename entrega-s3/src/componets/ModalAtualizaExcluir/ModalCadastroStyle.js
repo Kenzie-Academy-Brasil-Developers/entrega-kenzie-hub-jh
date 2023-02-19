@@ -13,20 +13,22 @@ export const ModalAtualizaExcluirStyled = styled.div`
 
     >div{
         border-radius: 4px;
-        padding: 20px;
+        margin: 5px;
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
         width: 100%;
-        max-width: 500px;
+        max-width: 450px;
         background-color: var(--color-grey-2);
         gap: 15px;
         color: var(--color-grey-5);
 
-        div{
+        >div{
+            padding: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background-color: var(--color-grey-3);
 
             >button{
                 background:none ;
@@ -37,7 +39,7 @@ export const ModalAtualizaExcluirStyled = styled.div`
         }
 
         form{
-            
+            padding: 20px;
             display: flex;
             flex-direction: column;
             gap: 15px;
@@ -57,7 +59,7 @@ export const ModalAtualizaExcluirStyled = styled.div`
                 border: none;
                 background-color: var(--color-3);
                 border-radius: 4px;
-                width: 48%;
+                width: 100%;
             }
 
             button:hover{
@@ -67,11 +69,31 @@ export const ModalAtualizaExcluirStyled = styled.div`
 
             button+button{
                 background-color: var(--color-grey-3);
+                width: 40%;
+                margin-left: 10px;
             }
             button+button:hover{
                 background-color: var(--color-grey-4);
+                
             }
+
+           
+            div{
+                display: flex;
+
+            }
+
+            @media ( max-width: 400px ) {
+       
+                button{
+                    font-size: 14px;
+                }
+
+            }
+  
         }
     }
+
+  
 
 `

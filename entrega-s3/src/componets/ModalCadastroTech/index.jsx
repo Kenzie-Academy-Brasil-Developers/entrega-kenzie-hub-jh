@@ -6,7 +6,8 @@ import * as yup from "yup"
 import {yupResolver} from "@hookform/resolvers/yup"
 import { api } from "../../API"
 import { RenderTechsContexto } from "../../Contexts/RenderTechsContexto/RenderTechsContextos"
-
+import { toast } from "react-toastify"
+import { Button } from "../Button"
 
 
 
@@ -45,15 +46,17 @@ export const ModalCadastroTech = () => {
                     Authorization: `Bearer ${token}`
                 }
 
-                })  
+                })
 
                 setAtualizaTec( true )
-               
+                renderModalCreation()
+                toast.success("Cadastrado com sucesso" , {autoClose: 2000 , theme:"dark" } )   
 
         }catch(errors) {
 
             console.error(errors.message)
-                setAtualizaTec( true )
+            setAtualizaTec( true )
+            toast.error("Nome já cadastrado!" ,  {autoClose: 2000 , theme:"dark" } ) 
                 
         }
     }
@@ -79,7 +82,8 @@ export const ModalCadastroTech = () => {
                         <option value="Avançado">Avançado</option>
                     </select>
                     <span>{errors.name && errors.name.message}</span>
-                    <button type="subimit">Cadastrar Tecnologia</button>
+                    {/* <button type="subimit">Cadastrar Tecnologia</button> */}
+                    <Button type={"submit"} text="Cadastrar Tecnologia" />
                 </form>
             </div>
         </StyledModalCadastro>

@@ -27,7 +27,9 @@ export const MainDash = () => {
          </div>
 
          <ul>
-           { tachUser.map((tach) => <ListTach key={tach.id} tach={tach}/>) }
+           { tachUser.length != 0 ? tachUser.map((tach) => <ListTach key={tach.id} tach={tach}/>) 
+           : <h1>Adicione uma tech</h1>
+           }
          </ul>
          
       </StyledMainDash>

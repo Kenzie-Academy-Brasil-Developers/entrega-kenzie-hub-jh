@@ -92,7 +92,11 @@ export const StyledMainDash = styled.main`
   }
   @media (max-width: 400px) {
 
+    padding: 10px;
 
+     ul{
+      padding: 10px;
+     }
 
   }
 
