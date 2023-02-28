@@ -2,7 +2,11 @@ import styled from "styled-components";
 
 export const HeaderStyle = styled.header`
 
+    position: fixed;
+    top: 0;
     border-bottom: 1px solid var(--color-grey-2);
+    width: 100%;
+    background-color: var(--color-grey-1);
 
     div{
         display: flex;

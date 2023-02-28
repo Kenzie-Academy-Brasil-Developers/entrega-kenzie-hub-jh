@@ -7,12 +7,11 @@ export const ListTach = ({tach}) => {
 
     return(
 
-        <li>
+        <li onClick={ () => {functionDeRenderizarModal(tach)}} >
 
             <h1> {tach.title} </h1>
             <div>
               <span> {tach.status}</span>
-              <button onClick={ () => {functionDeRenderizarModal(tach)}}>X</button>
             </div>
            
         </li>

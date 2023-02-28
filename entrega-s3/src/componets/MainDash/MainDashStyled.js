@@ -55,8 +55,6 @@ export const StyledMainDash = styled.main`
     display: flex;
     flex-direction: column;
     gap: 10px;
-    
-   
 
     li{
 
@@ -67,9 +65,8 @@ export const StyledMainDash = styled.main`
       padding: 15px;
       border-radius: 6px;
       box-sizing: border-box;
-      
-      
-      
+      cursor: pointer;
+
       div{
         display: flex;
         align-items: center;

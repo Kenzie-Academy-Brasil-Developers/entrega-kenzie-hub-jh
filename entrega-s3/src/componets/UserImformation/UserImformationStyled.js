@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const UserImformations = styled.section`
 
-    
+    margin-top: 90px;
     border-bottom: 1px solid var(--color-grey-2);
    
     div{
@@ -13,7 +13,6 @@ export const UserImformations = styled.section`
         max-width: 1200px;
         margin: 0 auto;
         padding: 40px 30px;
-
 
         h1{
             font-size: 1.5rem;
@@ -29,7 +28,6 @@ export const UserImformations = styled.section`
             
             flex-direction: column;
             gap: 10px;
-
         }
     }
 

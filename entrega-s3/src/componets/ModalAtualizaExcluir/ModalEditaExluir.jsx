@@ -85,8 +85,8 @@ export const ModalAtualizaExcluir = () => {
                 </div>
 
                 <form onSubmit={handleSubmit(atualizaTach)}>
-                    <label htmlFor="name">Nome do projeto</label>
-                    <input id="name" placeholder={RenderModalAtualizaExcluir.title} type="text" {...register("title")}/>
+                    <label  htmlFor="name">Nome do projeto</label>
+                    <input id="name" value={RenderModalAtualizaExcluir.title} type="text" {...register("title")}/>
                     <span className="error">{errors.title && errors.title.message}</span>
 
                     <label htmlFor="status">status</label>
