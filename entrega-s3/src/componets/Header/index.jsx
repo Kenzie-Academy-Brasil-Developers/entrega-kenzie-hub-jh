@@ -1,12 +1,6 @@
 import { HeaderStyle } from "./HeaderStyle"
-import { useContext } from "react"
-import { RenderTechsContexto } from "../../Contexts/RenderTechsContexto/RenderTechsContextos.jsx"
-
-
 
 export const Header = ({setUser}) => {
-
-    // const {userLocalStorage , setUserLocalStorage , tachUser , setTachUser , teste , token} = useContext(RenderTechsContexto)
 
     const logout = ( ) => {
 

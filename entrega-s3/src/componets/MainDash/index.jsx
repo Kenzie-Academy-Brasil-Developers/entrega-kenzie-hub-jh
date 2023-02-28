@@ -1,7 +1,6 @@
 import { StyledMainDash } from "./MainDashStyled"
-import { useState , useEffect , useContext} from "react"
-import { ModalAddTechContext } from "/src/Contexts/ModalAddTech/ModalAddTech.jsx"
-import { RenderTechsContexto } from "../../Contexts/RenderTechsContexto/RenderTechsContextos"
+import { useEffect , useContext} from "react"
+import { TechContext } from "../../Contexts/TechContext/TechContext"
 import { ListTach } from "../ListTachs"
 import { Button } from "../Button"
  
@@ -9,8 +8,8 @@ import { Button } from "../Button"
 
 export const MainDash = () => {
 
-   const { renderModalCreation } = useContext(ModalAddTechContext)
-   const { setAtualizaTec , tachUser} = useContext(RenderTechsContexto)
+   
+   const { setAtualizaTec , tachUser , renderModalCreation} = useContext(TechContext)
 
    useEffect(()=> {
 

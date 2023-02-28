@@ -6,9 +6,24 @@ export const TechContext = createContext({})
 
 export const TechContextProvider = ({children}) => {
 
-    
     const [tachUser , setTachUser] = useState([])
     const [atualizarTech , setAtualizaTec] = useState(false)
+    const [modalCriationTech , setModalCriationTech] = useState(false)
+
+    const [RenderModalAtualizaExcluir , setRenderModalAtualizaExcluir] = useState(false)
+
+    const functionDeRenderizarModal = (tech) => {
+
+        setRenderModalAtualizaExcluir(tech)
+       
+    }
+
+    const renderModalCreation = () => {
+          
+        setModalCriationTech(!modalCriationTech)
+    
+    }
+
 
     const token = localStorage.getItem("@token")   
 
@@ -42,7 +57,16 @@ export const TechContextProvider = ({children}) => {
           
     return(
 
-        <TechContext.Provider value={{ setAtualizaTec , tachUser }}>
+        <TechContext.Provider value={{ 
+            
+            setAtualizaTec ,
+            tachUser ,
+            modalCriationTech ,
+            renderModalCreation ,
+            setModalCriationTech,
+            functionDeRenderizarModal ,RenderModalAtualizaExcluir , setRenderModalAtualizaExcluir
+            
+            }}>
 
                 {children}
 

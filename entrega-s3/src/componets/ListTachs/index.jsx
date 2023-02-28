@@ -1,9 +1,9 @@
 import { useContext } from "react"
-import  { ModalAtualizaExcluirContext } from "../../Contexts/ModalEditaExluir/ModalEditaExluir"
+import  { TechContext } from "../../Contexts/TechContext/TechContext"
 
 export const ListTach = ({tach}) => {
 
-    const {functionDeRenderizarModal ,RenderModalAtualizaExcluir , setRenderModalAtualizaExcluir } = useContext(ModalAtualizaExcluirContext)
+    const {functionDeRenderizarModal ,RenderModalAtualizaExcluir , setRenderModalAtualizaExcluir } = useContext(TechContext)
 
     return(
 

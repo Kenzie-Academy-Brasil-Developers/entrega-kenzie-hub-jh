@@ -3,16 +3,16 @@ import { useNavigate } from "react-router-dom"
 import { Header } from "/src/componets/Header"
 import { UserImformation } from "../../componets/UserImformation"
 import { MainDash } from "../../componets/MainDash"
-import { ModalAddTechContext } from "/src/Contexts/ModalAddTech/ModalAddTech.jsx"
+import { TechContext} from "../../Contexts/TechContext/TechContext"
 import { ModalCadastroTech } from "../../componets/ModalCadastroTech"
 import { ModalAtualizaExcluir } from "../../componets/ModalAtualizaExcluir/ModalEditaExluir"
-import { ModalAtualizaExcluirContext } from "../../Contexts/ModalEditaExluir/ModalEditaExluir"
+
 
 export const DashBoard = () => {
     
 
-    const { modalCriationTech } = useContext(ModalAddTechContext)
-    const { functionDeRenderizarModal ,RenderModalAtualizaExcluir , setRenderModalAtualizaExcluir  } = useContext(ModalAtualizaExcluirContext)
+    const { modalCriationTech } = useContext(TechContext)
+    const { functionDeRenderizarModal ,RenderModalAtualizaExcluir , setRenderModalAtualizaExcluir  } = useContext(TechContext)
 
     const [user , setUser] = useState(JSON.parse(localStorage.getItem("@user")))
 

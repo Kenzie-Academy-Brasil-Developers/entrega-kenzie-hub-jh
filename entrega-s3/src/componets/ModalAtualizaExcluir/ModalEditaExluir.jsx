@@ -2,18 +2,17 @@ import  {ModalAtualizaExcluirStyled}  from "./ModalCadastroStyle.js"
 import { useForm } from "react-hook-form"
 import * as yup from "yup"
 import {yupResolver} from "@hookform/resolvers/yup"
-import {ModalAtualizaExcluirContext} from "../../Contexts/ModalEditaExluir/ModalEditaExluir"
+import {TechContext} from "../../Contexts/TechContext/TechContext"
 import { useContext } from "react"
 import { api } from "../../API"
-import { RenderTechsContexto } from "../../Contexts/RenderTechsContexto/TechContext"
 import { toast } from "react-toastify"
 import { Button } from "../Button/index.jsx"
 
 
 export const ModalAtualizaExcluir = () => {
 
-    const  { functionDeRenderizarModal , RenderModalAtualizaExcluir } = useContext(ModalAtualizaExcluirContext)
-    const {setAtualizaTec } = useContext(RenderTechsContexto)
+    const  { functionDeRenderizarModal , RenderModalAtualizaExcluir } = useContext(TechContext)
+    const {setAtualizaTec } = useContext(TechContext)
     const token = localStorage.getItem("@token")
 
     const formSchema = yup.object().shape({

@@ -1,11 +1,10 @@
 import  {StyledModalCadastro}  from "./ModalCadastroStyle"
-import { ModalAddTechContext } from "/src/Contexts/ModalAddTech/ModalAddTech.jsx"
 import { useContext } from "react"
 import { useForm } from "react-hook-form"
 import * as yup from "yup"
 import {yupResolver} from "@hookform/resolvers/yup"
 import { api } from "../../API"
-import { RenderTechsContexto } from "../../Contexts/RenderTechsContexto/RenderTechsContextos"
+import { TechContext } from "../../Contexts/TechContext/TechContext"
 import { toast } from "react-toastify"
 import { Button } from "../Button"
 
@@ -15,10 +14,7 @@ import { Button } from "../Button"
 
 export const ModalCadastroTech = () => {
 
-
-    const { renderModalCreation } = useContext(ModalAddTechContext)
-
-     const { setAtualizaTec } = useContext(RenderTechsContexto)
+     const { setAtualizaTec , renderModalCreation} = useContext(TechContext)
 
     const token = localStorage.getItem("@token")
 
