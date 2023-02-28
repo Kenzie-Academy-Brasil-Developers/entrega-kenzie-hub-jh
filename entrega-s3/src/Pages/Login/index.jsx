@@ -17,9 +17,6 @@ export const Login = () => {
     if(localStorage.getItem("@token")){
         
         navigate("/DashBoard")
-
-        return
-        
     }
 
     const formShecma = yup.object().shape({

@@ -31,7 +31,7 @@ export const TechContextProvider = ({children}) => {
 
             const ListTachs = async () => {
             
-                try{
+                  try{
 
                     const dadosUser = await api.get(`/profile`, {
                         headers: {

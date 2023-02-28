@@ -19,17 +19,13 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <GlobalStyle />
 
     <BrowserRouter >
-     
        <TechContextProvider>
-       
           <UserContextProvider>
          
-          <App />
+            <App />
 
           </UserContextProvider>
-       
        </TechContextProvider>
-       
     </BrowserRouter>
 
   </React.StrictMode>
