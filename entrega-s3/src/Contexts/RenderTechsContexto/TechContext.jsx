@@ -2,9 +2,9 @@ import { useEffect } from "react";
 import { createContext, useState } from "react";
 import { api } from "../../API"
 
-export const RenderTechsContexto = createContext({})
+export const TechContext = createContext({})
 
-export const RenderTechsProvider = ({children}) => {
+export const TechContextProvider = ({children}) => {
 
     
     const [tachUser , setTachUser] = useState([])
@@ -42,11 +42,11 @@ export const RenderTechsProvider = ({children}) => {
           
     return(
 
-        <RenderTechsContexto.Provider value={{ setAtualizaTec , tachUser }}>
+        <TechContext.Provider value={{ setAtualizaTec , tachUser }}>
 
                 {children}
 
-        </RenderTechsContexto.Provider>
+        </TechContext.Provider>
 
     )
 

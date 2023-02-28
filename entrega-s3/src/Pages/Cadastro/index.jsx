@@ -3,13 +3,13 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup" 
 import { Link } from "react-router-dom"
 import {StyleCadastro} from "./StyleCadastro"
-import { api } from "../../API/index.js"
-import { toast } from "react-toastify"
-import { useNavigate } from "react-router-dom"
+import { UserContext } from "../../Contexts/UserContext/userContext"
+import { useContext } from "react"
 
 export const Cadastro = () => {
 
-    const navigate = useNavigate()
+    const { cadastro } = useContext(UserContext)
+
 
     const formShecma = yup.object().shape({
 
@@ -43,23 +43,7 @@ export const Cadastro = () => {
 
     } )
 
-    const cadastro = async ({senhaComfirm, ...Data}) => {
-
-       try{
-   
-        await api.post("/users" , Data)
-
-        toast.success("Cadastrado com sucesso" , {autoClose: 2000 , theme:"dark" } )
-        navigate("/")
-
-       }catch (error) {
-
-        console.log(error)
-        toast.error(error.message , {autoClose: 2000 , theme:"dark" } )
-       
-       }
-       
-    }
+  
 
     return(
 

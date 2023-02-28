@@ -5,7 +5,7 @@ import {yupResolver} from "@hookform/resolvers/yup"
 import {ModalAtualizaExcluirContext} from "../../Contexts/ModalEditaExluir/ModalEditaExluir"
 import { useContext } from "react"
 import { api } from "../../API"
-import { RenderTechsContexto } from "../../Contexts/RenderTechsContexto/RenderTechsContextos"
+import { RenderTechsContexto } from "../../Contexts/RenderTechsContexto/TechContext"
 import { toast } from "react-toastify"
 import { Button } from "../Button/index.jsx"
 

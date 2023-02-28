@@ -32,10 +32,29 @@ export const UserContextProvider = ({children}) => {
     }
 
 
+    const cadastro = async ({senhaComfirm, ...Data}) => {
+
+        try{
+    
+         await api.post("/users" , Data)
+ 
+         toast.success("Cadastrado com sucesso" , {autoClose: 2000 , theme:"dark" } )
+         navigate("/")
+ 
+        }catch (error) {
+ 
+         console.log(error)
+         toast.error(error.message , {autoClose: 2000 , theme:"dark" } )
+        
+        }
+        
+     }
+
+
           
     return(
 
-        <UserContext.Provider value={{ onSubmitLogin }}>
+        <UserContext.Provider value={{ onSubmitLogin , cadastro }}>
 
                 {children}
 

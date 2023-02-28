@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup" 
 import {StyleLogin} from "./StyleLogin"
-import { useContext, useEffect } from "react"
+import { useContext } from "react"
 import { useNavigate } from "react-router-dom"
 import { UserContext } from "../../Contexts/UserContext/userContext"
 
@@ -13,8 +13,6 @@ export const Login = () => {
     const { onSubmitLogin } = useContext(UserContext)
 
     const navigate = useNavigate()
-
-
 
     if(localStorage.getItem("@token")){
         
@@ -37,8 +35,6 @@ export const Login = () => {
         resolver: yupResolver(formShecma)
 
     } )
-
-    
     
     return(
 
